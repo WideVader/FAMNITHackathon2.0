@@ -1,8 +1,14 @@
+import { Layout } from "./layout/layout"
+import Home from "./page/home"
+import { Routes, Route } from "react-router-dom"
 
- const App=()=> {
-
+const App = () => {
   return (
-    <h1>Home</h1>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+        </Route>
+      </Routes>
   )
 }
 
