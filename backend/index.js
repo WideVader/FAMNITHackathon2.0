@@ -1,61 +1,80 @@
 const express = require('express');
 const cors = require('cors');
-const db = require("./app/models");
+const mongoose = require('mongoose');
+const { startSession } = require('./app/models/user.model');
+mongoose.set("strictQuery", false);
 require('dotenv').config()
 
+const PORT = process.env.PORT || 5800;
 const FRONTEND_PORT = 3000;
+const db = process.env.DATABSE.replace("<PASSWORD>",process.env.DATABSE_PASSWORD);
 const Role = db.role;
 const app = express();
 
-app.use(cors({credentials: true, origin: process.env.FRONTEND_PORT}))
+app.use(cors({ credentials: true, origin: process.env.FRONTEND_PORT }))
 app.use(express.json());
 
-db.mongoose
-  .connect(`mongodb://localhost:27017/Hackathon.user`, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-  })
-  .then(() => {
-    console.log("Successfully connect to MongoDB.");
-    initial();
-  })
-  .catch(err => {
-    console.error("Connection error", err);
-    process.exit();
-  });
+// const db = process.env.DATABASE.replace(
+//   '<PASSWORD>',
+//   process.env.DATABASE_PASSWORD
+// );
 
-function initial() {
-  Role.estimatedDocumentCount((err, count) => {
-    if (!err && count === 0) {
-      new Role({
-        name: "user"
-      }).save(err => {
-        if (err) {
-          console.log("error", err);
-        }
 
-        console.log("added 'user' to roles collection");
-      });
+app.get('/', (req, res) => {
+  res.send("Home");
+})
 
-      new Role({
-        name: "lord"
-      }).save(err => {
-        if (err) {
-          console.log("error", err);
-        }
+const initial = async () => {
+  try {
+    await mongoose.connect(db);
 
-        console.log("added 'lord' to roles collection");
-      });
-    }
-  });
+    app.listen(PORT, () => {
+      console.log(`Server listening on port ${PORT}`);
+    })
+  } catch (error) {
+    console.log(error)
+  }
 }
 
-const PORT = process.env.PORT || 5800;
+initial();
 
-app.get('/',(req, res)=>{
-    res.send("Home");
-})
+// db.mongoose
+//   .connect(`mongodb+srv://Hackathon:Janko@cluster0.hws3tel.mongodb.net/`, {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true
+//   })
+//   .then(() => {
+//     console.log("Successfully connect to MongoDB.");
+//     initial();
+//   })
+// .catch(err => {
+//   console.error("Connection error", err);
+//   process.exit();
+// });
 
-app.listen(PORT,()=>{
-    console.log(`Severe listening on port ${PORT}`);
-})
+// function initial() {
+//   Role.estimatedDocumentCount((err, count) => {
+//     if (!err && count === 0) {
+//       new Role({
+//         name: "user"
+//       }).save(err => {
+//         if (err) {
+//           console.log("error", err);
+//         }
+
+//         console.log("added 'user' to roles collection");
+//       });
+
+//       new Role({
+//         name: "lord"
+//       }).save(err => {
+//         if (err) {
+//           console.log("error", err);
+//         }
+
+//         console.log("added 'lord' to roles collection");
+//       });
+//     }
+//   });
+// }
+
