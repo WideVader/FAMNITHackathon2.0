@@ -1,0 +1,23 @@
+.LinkDropDownMenu{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    cursor: pointer;
+}
+
+.textContainer p{
+    color: gray;
+}
+
+.sizeIcons{
+    font-size: 40px;
+    color: black;
+}
+
+.textContainer{
+    padding: 8px 30px 16px 0;
+}
+

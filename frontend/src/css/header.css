@@ -11,11 +11,6 @@ header {
   padding: 0 1em;
 }
 
-.red{
-  background-color: rebeccapurple;
-}
-
-
 .mobileNavButton {
   display: none;
 }

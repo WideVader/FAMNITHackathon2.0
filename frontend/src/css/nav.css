@@ -10,10 +10,11 @@ nav {
     padding: 10px 20px;
     border-radius: 5px;
     border: 2px solid rgba(0, 0, 0, 0);
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .link:hover{
-    border: 2px solid rgb(160, 160, 160);
+    color: rgb(103, 103, 103);
 }
 
 a.active{

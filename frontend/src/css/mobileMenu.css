@@ -11,7 +11,6 @@
   );
   display: none;
   border: rgb(193, 193, 193) 1px solid;
-  
 }
 
 .linkContainer{
@@ -20,6 +19,7 @@
 }
 
 .navButton{
+  display: none;
   width: 100%;
   padding: 8px;
   background-color: #1F2328;
@@ -59,6 +59,10 @@
 }
 
 @media screen and (max-width: 1012px) {
+  .navButton{
+    display: block;
+  }
+
   .mobileMenu {
     display: flex;
     flex-direction: column;
