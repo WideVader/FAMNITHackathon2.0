@@ -14,7 +14,7 @@
 
 .sizeIcons{
     font-size: 40px;
-    color: black;
+    color: var(--link-text);
 }
 
 .textContainer{

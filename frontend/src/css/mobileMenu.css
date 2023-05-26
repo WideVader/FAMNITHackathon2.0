@@ -26,7 +26,7 @@
   border: #24292f 1px solid;
   border-radius: 5px;
   cursor: pointer;
-  color: white;
+  color: var(--mobile-nav-bar-color);
   font-weight: bolder;
   font-size: 16px;
   line-height: 24px;

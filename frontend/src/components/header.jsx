@@ -27,7 +27,7 @@ export const Header = () => {
         { link: "/package", text: "Host and manage packages", title: "Package", Icons: GoPackage },
         { link: "/", text: "Find and fix vulnerabilities", title: "Security", Icons: GrShieldSecurity }
     ]
-    
+
     return (
         <>
             {isOpen && <MobileMenu isOpen={isOpen} />}
@@ -39,12 +39,12 @@ export const Header = () => {
                     <DropdownMenu data={dataActions} />
                     <NavLink to="/" className="link"> Home </NavLink>
                     <NavLink to="/user" className="link"> User </NavLink>
-                    <NavLink to="/Ronaldo" className="link"> Ronaldo </NavLink>
+                    <NavLink to="/login" className="link"> Login </NavLink>
                     <NavLink to="/Messi" className="link"> Messi </NavLink>
                 </nav>
                 <div className="mobileNavButton" >
                     <IconButton onClick={handleClick}>
-                        {isOpen ? <IoIosClose /> : <IoIosMenu />}
+                        {isOpen ? <IoIosClose color="white"/> : <IoIosMenu color="white"/>}
                     </IconButton>
                 </div>
             </header>
