@@ -1,0 +1,29 @@
+header {
+  width: calc(100% - 2em);
+  height: 70px;
+  border-bottom: 1px solid rgba(220, 220, 220, 0.541);
+  -webkit-box-shadow: 0px 0px 24px -12px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0px 0px 24px -12px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 0px 24px -12px rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1em;
+}
+
+
+.mobileNavButton {
+  display: none;
+}
+
+@media (max-width: 1012px) {
+  .mobileNavButton {
+    display: block;
+  }
+
+  html.menu-open,
+  body.menu-open {
+    overflow: hidden;
+    scroll-behavior: smooth;
+  }
+}
