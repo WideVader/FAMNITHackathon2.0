@@ -1,27 +1,57 @@
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
-const { startSession } = require('./app/models/user.model');
+// const { startSession } = require('./app/models/user.model');
+const User = require('./app/models/user.model');
+const Role = require('./app/models/role.model');
 mongoose.set("strictQuery", false);
-require('dotenv').config()
+require('dotenv').config();
 
 const PORT = process.env.PORT || 5800;
 const FRONTEND_PORT = 3000;
-const db = process.env.DATABSE.replace("<PASSWORD>",process.env.DATABSE_PASSWORD);
-const Role = db.role;
+const db = process.env.DATABSE.replace("<PASSWORD>", process.env.DATABSE_PASSWORD);
 const app = express();
 
 app.use(cors({ credentials: true, origin: process.env.FRONTEND_PORT }))
 app.use(express.json());
 
-// const db = process.env.DATABASE.replace(
-//   '<PASSWORD>',
-//   process.env.DATABASE_PASSWORD
-// );
+const roleLord = new Role({
+  name: "Lord"
+});
 
+const user1 = new User({
+  username: "Janko",
+  email: "janko@example.com",
+  password: "janko123",
+  roles: [roleLord]
+})
+
+// roleLord.save()
+// user1.save()
 
 app.get('/', (req, res) => {
-  res.send("Home");
+  res.send("Welcome");
+})
+
+app.get('/api/users/', async (req, res) => {
+  try {
+    const result = await User.find();
+    res.send(result);
+  } catch (error) {
+    res.status(500).json({ error: error.message })
+  }
+})
+
+app.get('/api/roles/', async (req, res) => {
+  const result = await Role.find();
+  res.send(result);
+})
+
+app.post('/api/newuser', (req, res) => {
+  console.log(req.body);
+  const user = new User(req.body);
+  user.save();
+  res.status(201).json(user);
 })
 
 const initial = async () => {
@@ -37,44 +67,3 @@ const initial = async () => {
 }
 
 initial();
-
-// db.mongoose
-//   .connect(`mongodb+srv://Hackathon:Janko@cluster0.hws3tel.mongodb.net/`, {
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true
-//   })
-//   .then(() => {
-//     console.log("Successfully connect to MongoDB.");
-//     initial();
-//   })
-// .catch(err => {
-//   console.error("Connection error", err);
-//   process.exit();
-// });
-
-// function initial() {
-//   Role.estimatedDocumentCount((err, count) => {
-//     if (!err && count === 0) {
-//       new Role({
-//         name: "user"
-//       }).save(err => {
-//         if (err) {
-//           console.log("error", err);
-//         }
-
-//         console.log("added 'user' to roles collection");
-//       });
-
-//       new Role({
-//         name: "lord"
-//       }).save(err => {
-//         if (err) {
-//           console.log("error", err);
-//         }
-
-//         console.log("added 'lord' to roles collection");
-//       });
-//     }
-//   });
-// }
-
