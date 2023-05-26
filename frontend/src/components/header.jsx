@@ -44,7 +44,7 @@ export const Header = () => {
                 </nav>
                 <div className="mobileNavButton" >
                     <IconButton onClick={handleClick}>
-                        {isOpen ? <IoIosClose color="white"/> : <IoIosMenu color="white"/>}
+                        {isOpen ? <IoIosClose color="var(--link-text)"/> : <IoIosMenu color="var(--link-text)"/>}
                     </IconButton>
                 </div>
             </header>
