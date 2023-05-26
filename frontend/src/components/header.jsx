@@ -30,7 +30,7 @@ export const Header = () => {
                     <NavLink to="/Messi" className="link"> Messi </NavLink>
                 </nav>
                 <div className="mobileNavButton" >
-                    <IconButton onClick={handleClick} className={isOpen ? "menu-open" : ""}>
+                    <IconButton onClick={handleClick}>
                         {isOpen ? <IoIosClose /> : <IoIosMenu />}
                     </IconButton>
                 </div>

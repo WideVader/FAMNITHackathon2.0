@@ -11,6 +11,10 @@ header {
   padding: 0 1em;
 }
 
+.red{
+  background-color: rebeccapurple;
+}
+
 
 .mobileNavButton {
   display: none;
@@ -18,12 +22,11 @@ header {
 
 @media (max-width: 1012px) {
   .mobileNavButton {
-    display: block;
+    display: inline-block;
   }
 
   html.menu-open,
   body.menu-open {
     overflow: hidden;
-    scroll-behavior: smooth;
   }
 }
