@@ -1,13 +1,20 @@
 const mongoose = require('mongoose');
-mongoose.Promise = global.Promise;
+const refreshToken = require('./refreshToken.model')
+const user = require('./user.model')
+// mongoose.Promise = global.Promise;
 
 const db = {};
 
 db.mongoose = mongoose;
 
-db.user = require("./user.model");
+user = require("./user.model");
 db.role = require("./role.model");
+refreshToken = require("./refreshToken.model");
 
-db.ROLES = ["user", "lord"];
+// db.ROLES = ["user", "lord"];
 
-module.exports = db;
+
+
+module.exports = {
+    refreshToken
+};
