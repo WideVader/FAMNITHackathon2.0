@@ -6,7 +6,6 @@ import { IoIosMenu, IoIosClose } from "react-icons/io";
 import { VscGithubAction } from "react-icons/vsc";
 import { GoPackage } from "react-icons/go";
 import { GrShieldSecurity } from "react-icons/gr";
-GrShieldSecurity
 import React, { useState } from 'react';
 import { MobileMenu } from "./mobileMenu";
 import { DropdownMenu } from "./dropdownMenu";
@@ -40,7 +39,7 @@ export const Header = () => {
                     <NavLink to="/" className="link"> Home </NavLink>
                     <NavLink to="/user" className="link"> User </NavLink>
                     <NavLink to="/login" className="link"> Login </NavLink>
-                    <NavLink to="/Messi" className="link"> Messi </NavLink>
+                    <NavLink to="/newlife" className="link"> New Life </NavLink>
                 </nav>
                 <div className="mobileNavButton" >
                     <IconButton onClick={handleClick}>

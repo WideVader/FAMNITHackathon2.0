@@ -1,0 +1,88 @@
+.star {
+    padding: 5px 10px;
+    background-color: rgba(123, 185, 255, 0.619);
+    border-radius: 5px;
+    display: inline-block;
+    font-size: 14px;
+}
+
+.data-information {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.imageBannerCard{
+    width: 200px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.titleCard{
+    padding-bottom: 10px;
+}
+
+.fullScreenWidth{
+    /* background-color: rebeccapurple; */
+    width: 100%;
+}
+
+.star-reating,
+.star {
+    color: rgb(65, 65, 242);
+    font-weight: bold;
+}
+
+.cardPart{
+    border-radius: 10px;
+    background-color: rgb(246, 246, 246);
+    border: 1px solid rgb(240, 240, 240);
+    display: flex;
+    gap: 25px;
+    margin: 5px 0;
+    align-items: center;
+    padding: 10px;
+    width: calc(100% - 20px);
+}
+
+.price{
+    scale: 1;
+    margin-left: auto;
+    margin-right: 20px;
+}
+
+.night{
+    color: gray;
+}
+
+.priceBold{
+    font-weight: bold;
+}
+
+.address{
+    display: flex;
+    gap: 4px;
+}
+
+.amenitiesCard{
+    display: flex;
+    gap: 15px;
+    margin: 5px 0;
+}
+
+
+@media (max-width: 767px) {
+    .imageBannerCard{
+        width: 100%;
+        height: auto;
+    }
+
+    .amenitiesCard{
+        flex-wrap: wrap;
+    }
+
+    .cardPart{
+        flex-direction: column;
+    }
+  }

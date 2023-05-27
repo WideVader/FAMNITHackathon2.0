@@ -1,0 +1,66 @@
+.buttonSearch{
+    background-color: blue;
+    cursor: pointer;
+    width: 60px;
+    border-top-right-radius: 30px;
+    border: none;
+    border-bottom-right-radius: 30px;
+    color: white;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.searchBarInput{
+    padding: 20px;
+    border: none;
+    outline: none;
+    background-color: rgb(255, 244, 230);
+    width: 100%;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+
+.FilterForDesktop{
+    width: 300px;
+}
+
+.searchBar{
+    display: flex;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.newLife{
+    display: flex;
+}
+
+.DataForDesktop{
+    width: calc(100% - 300px);
+}
+
+.SearchTitle{
+    margin: 20px;
+}
+
+
+@media (max-width: 767px) {
+    .searchBar{
+        width: calc(100% - 1em);
+        margin: 0 0.5em;
+    }
+  }
+
+  @media (max-width: 950px) {
+    .FilterForDesktop{
+        width: 190px;
+    }
+    .DataForDesktop{
+        width: 100%;
+    }
+
+    .FilterForDesktop{
+        display: none;
+    }
+  }
