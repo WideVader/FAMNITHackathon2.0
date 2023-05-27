@@ -38,13 +38,13 @@ export const Header = () => {
                 <nav>
                     <DropdownMenu data={dataActions} />
                     <NavLink to="/" className="link"> Home </NavLink>
-                    <NavLink to="/Jug" className="link"> Jug </NavLink>
-                    <NavLink to="/Ronaldo" className="link"> Ronaldo </NavLink>
+                    <NavLink to="/user" className="link"> User </NavLink>
+                    <NavLink to="/login" className="link"> Login </NavLink>
                     <NavLink to="/Messi" className="link"> Messi </NavLink>
                 </nav>
                 <div className="mobileNavButton" >
                     <IconButton onClick={handleClick}>
-                        {isOpen ? <IoIosClose /> : <IoIosMenu />}
+                        {isOpen ? <IoIosClose color="var(--link-text)"/> : <IoIosMenu color="var(--link-text)"/>}
                     </IconButton>
                 </div>
             </header>
