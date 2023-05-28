@@ -1,0 +1,65 @@
+[
+    {
+        "adress": "Gucevska 22, 11000 Beograd",
+        "price": 700,
+        "image": "https://www.mojcimer.si/storage/image/202209//mediumcover/dsc-0134.jpg",
+        "title": "Rent a kuca",
+        "amenities": [
+            {
+                "wifi": true
+            },
+            {
+                "breakfast": true
+            },
+            {
+                "parking": true
+            },
+            {
+                "pets": true
+            }
+        ],
+        "star": 4.5
+    },
+    {
+        "adress": "Gucevska 22, 11000 Beograd",
+        "price": 680,
+        "image": "https://www.mojcimer.si/storage/image/202209//mediumcover/dsc-0134.jpg",
+        "title": "Rent a kuca",
+        "amenities": [
+            {
+                "wifi": false
+            },
+            {
+                "breakfast": false
+            },
+            {
+                "parking": true
+            },
+            {
+                "pets": false
+            }
+        ],
+        "star": 4.5
+    },
+    {
+        "adress": "Gucevska 22, 11000 Beograd",
+        "price": 720,
+        "image": "https://www.mojcimer.si/storage/image/202209//mediumcover/dsc-0134.jpg",
+        "title": "Rent a kuca",
+        "amenities": [
+            {
+                "wifi": true
+            },
+            {
+                "breakfast": true
+            },
+            {
+                "parking": false
+            },
+            {
+                "pets": true
+            }
+        ],
+        "star": 90
+    }
+]
