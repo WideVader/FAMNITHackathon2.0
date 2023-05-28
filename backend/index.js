@@ -90,7 +90,7 @@ app.patch('/api/users/:id', async (req, res) => {
   }
 })
 
-app.get('/api/login', async (req, res) => {
+app.post('/api/login', async (req, res) => {
   try {
     const { username, password } = req.body;
     const user = await User.findOne({ username });
@@ -108,7 +108,7 @@ app.get('/api/login', async (req, res) => {
   }
 })
 
-app.get('/api/recommend', async (req, res) => {
+app.post('/api/recommend', async (req, res) => {
   try {
     const { _id } = req.body;
     let list;
@@ -123,7 +123,7 @@ app.get('/api/recommend', async (req, res) => {
         list = await Listing.find({ "price": { $lt: 400 } });
       }
       else if (user.age >= 20 && user.gender == "female") {
-        list = await Listing.find({ "price": { $lt: 800 } });
+        list = await Listing.find({ "price": { $lt: 700 } });
       }
       else if (user.age >= 20 && user.gender == "male") {
         list = await Listing.find({ "price": { $lt: 900 } });
