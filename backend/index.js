@@ -128,7 +128,7 @@ app.post('/api/recommend', async (req, res) => {
       else if (user.age >= 20 && user.gender == "male") {
         list = await Listing.find({ "price": { $lt: 900 } });
       }
-      res.json([list]);
+      res.json(list);
     }
   } catch (error) {
     res.status(500).json({ error: "Something went wrong." });
