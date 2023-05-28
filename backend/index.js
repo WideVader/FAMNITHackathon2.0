@@ -116,16 +116,16 @@ app.get('/api/recommend', async (req, res) => {
     if (!_id)
       res.status(403).json({ error: "You are not logged in or i messed up with backend." });
     else {
-      if (user.age > 20 && user.gender == "female") {
-        list = await Listing.findOne({ "price": { $lt: 300 } });
+      if (user.age < 20 && user.gender == "female") {
+        list = await Listing.find({ "price": { $lt: 300 } });
       }
-      else if (user.age > 20 && user.gender == "male") {
-        list = await Listing.findOne({ "price": { $lt: 400 } });
+      else if (user.age < 20 && user.gender == "male") {
+        list = await Listing.find({ "price": { $lt: 400 } });
       }
-      else if (user.age <= 20 && user.gender == "female") {
-        list = await Listing.findOne({ "price": { $lt: 800 } });
+      else if (user.age >= 20 && user.gender == "female") {
+        list = await Listing.find({ "price": { $lt: 800 } });
       }
-      else if (user.age <= 20 && user.gender == "male") {
+      else if (user.age >= 20 && user.gender == "male") {
         list = await Listing.find({ "price": { $lt: 900 } });
       }
       res.json({ list });
