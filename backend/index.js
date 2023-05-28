@@ -100,6 +100,16 @@ app.delete('/api/users/:id', async (req, res) => {
   }
 })
 
+app.delete('/api/users/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const result = await User.deleteOne({ _id: id });
+    res.json({ deletedCount: result.deletedCount });
+  } catch (error) {
+    res.status(500).json({ error: "Something went wrong." });
+  }
+})
+
 app.post('/api/users/new', async (req, res) => {
 
   const User = require('./app/models/user.model');
@@ -215,7 +225,7 @@ app.post('/api/listings/', async (req, res) => {
     try {
       let amenities = ["'shop'='convenience'", "'amenity'='restaurant'", "'highway'='bus_stop'", "'tourism'='museum'", "'leisure'='park'", "'amenity'='school'", "'leisure'='stadium'", "'leisure'='fitness_centre'", "'amenity'='fuel'", "'aeroway'='aerodrome'"]
       let response = []
-      let responseObj = { adress: el.adress, price: el.price, image: el.image, title: el.title, filters: el.amenities }
+      let responseObj = { _id: el._id, adress: el.adress, price: el.price, image: el.image, title: el.title, filters: el.amenities }
       let flag = true;
       for(let i = 0; i < amenities.length; i++){
         if(rad[i]!=0){
