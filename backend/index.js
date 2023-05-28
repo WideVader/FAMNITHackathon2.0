@@ -128,7 +128,7 @@ app.post('/api/recommend', async (req, res) => {
       else if (user.age >= 20 && user.gender == "male") {
         list = await Listing.find({ "price": { $lt: 900 } });
       }
-      const arrayOfArrays = data.map(list => [list]);
+      const arrayOfArrays = list.map(obj => [obj]);
       res.json(arrayOfArrays);
     }
   } catch (error) {
