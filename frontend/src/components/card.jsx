@@ -19,7 +19,7 @@ export const Card = ({ data }) => {
         }
     }
 
-    console.log((data[0].filters).length)
+    // console.log((data[0].filters).length)
 
     return (
         <div className="cardPart">
@@ -27,7 +27,7 @@ export const Card = ({ data }) => {
             <div className="fullScreenWidth">
                 <div className="infoTop">
                     <h2 className="titleCard">{data[0].title}</h2>
-                    <p>{(data[0].filters).length * 10}%</p>
+                    {data[0].filters && <p>{(data[0].filters).length * 10}%</p>}
                 </div>
                 <div className="address">
                     <GrLocation /> <p>{data[0].adress}</p>

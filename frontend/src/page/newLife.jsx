@@ -64,7 +64,7 @@ export const NewLife = () => {
                 <div className="DataForDesktop">
                     <div className="req">
                         <h1 className="SearchTitle">Where to Stay?</h1>
-                        <button onClick={Recommended} className="Recommend">Recommend</button>
+                        { user.data && <button onClick={Recommended} className="Recommend">Recommend</button>} 
                     </div>
                     <div className="NavLinije">
                         <input type="text" onChange={(event) => { setReq({ ...req, adress: event.target.value }) }} className="searchBarInput" placeholder="Search hotels, apartment and more" />

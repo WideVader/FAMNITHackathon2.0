@@ -30,7 +30,7 @@ export const Login = () => {
             .then((data) => {
                 console.log(data.data.user)
                 user.setData(data.data.user)
-                navigate("/", { replace: true })
+                navigate("/newlife", { replace: true })
             }).catch((err) => {
                 console.log(err)
             })

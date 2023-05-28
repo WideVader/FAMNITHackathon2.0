@@ -25,12 +25,14 @@ export const Header = () => {
             <header>
                 <NavLink to="/">
                     <span className="logo">
-                        TNDDIS
+                        DR
+                        {/* TNDDIS */}
                     </span>
                 </NavLink>
                 <nav>
                     <NavLink to="/" className="link"> Home </NavLink>
-                    <NavLink to="/newlife" className="link"> New Life </NavLink>
+                    <NavLink to="/newlife" className="link"> Search </NavLink>
+                    <NavLink to="/" className="link"> Documentation </NavLink>
                     {user.data ? <p className="link">{user.data.username}</p> : <NavLink to="/login" className="link"> Login </NavLink>}
                 </nav>
                 <div className="mobileNavButton" >
