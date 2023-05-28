@@ -15,7 +15,7 @@ const FRONTEND_PORT = 3000;
 const db = process.env.DATABSE.replace("<PASSWORD>", process.env.DATABSE_PASSWORD);
 const app = express();
 
-app.use(cors({ origin: process.env.FRONTEND_PORT }))
+app.use(cors({ origin: "*" }))
 app.use(express.json());
 
 // const roleLord = new Role({
@@ -135,7 +135,7 @@ app.get('/api/listings/', async (req, res) => {
           }
           //IT TOOK 3 HOURS TO MAKE THESE AWAIT ASYNC WORK, NEVER AGAIN PLEASE!!!!
           const { lat, lon } = response.data[0];
-          await responses.push(await universal(lat, lon, req.body.filter, element.adress))
+          await responses.push(await universal(lat, lon, req.body.filter, element))
 
         })
         .catch((error) => {
@@ -152,6 +152,7 @@ app.get('/api/listings/', async (req, res) => {
   }
 
   async function sendOverpassRequest(query, amenities, rad) {
+
     try {
       const response = await axios.get('https://overpass-api.de/api/interpreter', {
         params: {
@@ -171,7 +172,7 @@ app.get('/api/listings/', async (req, res) => {
     try {
       let amenities = ["'shop'='convenience'", "'amenity'='restaurant'", "'highway'='bus_stop'", "'tourism'='museum'", "'leisure'='park'", "'amenity'='school'", "'leisure'='stadium'", "'leisure'='fitness_centre'", "'amenity'='fuel'", "'aeroway'='aerodrome'"]
       let response = []
-      let responseObj = { adress: el, filters: [] }
+      let responseObj = { adress: el.adress, price: el.price, image: el.image, title: el.title, filters: [] }
       let flag = true;
       for(let i = 0; i < amenities.length; i++){
         if(rad[i]!=0){

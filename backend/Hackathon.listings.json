@@ -1,0 +1,216 @@
+[{
+  "_id": {
+    "$oid": "64722f582c8e3e62ba2ce9fb"
+  },
+  "adress": "Gucevska 22, 11000 Beograd",
+  "price": 700,
+  "image": "https://www.mojcimer.si/storage/image/202209//mediumcover/dsc-0134.jpg",
+  "title": "Rent a kuca",
+  "amenities": [
+    {
+      "wifi": false,
+      "_id": {
+        "$oid": "64722f582c8e3e62ba2ce9fc"
+      }
+    },
+    {
+      "breakfast": false,
+      "_id": {
+        "$oid": "64722f582c8e3e62ba2ce9fd"
+      }
+    },
+    {
+      "parking": true,
+      "_id": {
+        "$oid": "64722f582c8e3e62ba2ce9fe"
+      }
+    },
+    {
+      "pets": false,
+      "_id": {
+        "$oid": "64722f582c8e3e62ba2ce9ff"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64722fa5871e19f0d3debdf4"
+  },
+  "adress": "Gucevska 10, 11000 Beograd",
+  "price": 250,
+  "image": "https://www.mojcimer.si/storage/image/202209//mediumcover/dsc-0134.jpg",
+  "title": "Home renting in belgrade",
+  "amenities": [
+    {
+      "wifi": true,
+      "_id": {
+        "$oid": "64722fa5871e19f0d3debdf5"
+      }
+    },
+    {
+      "breakfast": true,
+      "_id": {
+        "$oid": "64722fa5871e19f0d3debdf6"
+      }
+    },
+    {
+      "parking": true,
+      "_id": {
+        "$oid": "64722fa5871e19f0d3debdf7"
+      }
+    },
+    {
+      "pets": false,
+      "_id": {
+        "$oid": "64722fa5871e19f0d3debdf8"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64722fc77e0dfdd4a9764d79"
+  },
+  "adress": "Đorđa Andrejevića Kuna 6, 11000 Beograd",
+  "price": 300,
+  "image": "https://www.mojcimer.si/storage/image/202209//mediumcover/dsc-0134.jpg",
+  "title": "House rent",
+  "amenities": [
+    {
+      "wifi": true,
+      "_id": {
+        "$oid": "64722fc77e0dfdd4a9764d7a"
+      }
+    },
+    {
+      "breakfast": true,
+      "_id": {
+        "$oid": "64722fc77e0dfdd4a9764d7b"
+      }
+    },
+    {
+      "parking": false,
+      "_id": {
+        "$oid": "64722fc77e0dfdd4a9764d7c"
+      }
+    },
+    {
+      "pets": false,
+      "_id": {
+        "$oid": "64722fc77e0dfdd4a9764d7d"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64722feb70703879c70a696a"
+  },
+  "adress": "Veluščkova ulica 11, 6000 Koper",
+  "price": 150,
+  "image": "https://www.mojcimer.si/storage/image/202209//mediumcover/dsc-0134.jpg",
+  "title": "House room rent",
+  "amenities": [
+    {
+      "wifi": false,
+      "_id": {
+        "$oid": "64722feb70703879c70a696b"
+      }
+    },
+    {
+      "breakfast": true,
+      "_id": {
+        "$oid": "64722feb70703879c70a696c"
+      }
+    },
+    {
+      "parking": false,
+      "_id": {
+        "$oid": "64722feb70703879c70a696d"
+      }
+    },
+    {
+      "pets": true,
+      "_id": {
+        "$oid": "64722feb70703879c70a696e"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64723022c8c16f7b34ec518b"
+  },
+  "adress": "Veluščkova ulica 5, 6000 Koper",
+  "price": 500,
+  "image": "https://www.mojcimer.si/storage/image/202209//mediumcover/dsc-0134.jpg",
+  "title": "Koper vila",
+  "amenities": [
+    {
+      "wifi": true,
+      "_id": {
+        "$oid": "64723022c8c16f7b34ec518c"
+      }
+    },
+    {
+      "breakfast": false,
+      "_id": {
+        "$oid": "64723022c8c16f7b34ec518d"
+      }
+    },
+    {
+      "parking": true,
+      "_id": {
+        "$oid": "64723022c8c16f7b34ec518e"
+      }
+    },
+    {
+      "pets": false,
+      "_id": {
+        "$oid": "64723022c8c16f7b34ec518f"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64723048743d7e1d67e5b498"
+  },
+  "adress": "Veluščkova ulica 7, 6000 Koper",
+  "price": 250,
+  "image": "https://www.mojcimer.si/storage/image/202209//mediumcover/dsc-0134.jpg",
+  "title": "Koper stan",
+  "amenities": [
+    {
+      "wifi": true,
+      "_id": {
+        "$oid": "64723048743d7e1d67e5b499"
+      }
+    },
+    {
+      "breakfast": true,
+      "_id": {
+        "$oid": "64723048743d7e1d67e5b49a"
+      }
+    },
+    {
+      "parking": true,
+      "_id": {
+        "$oid": "64723048743d7e1d67e5b49b"
+      }
+    },
+    {
+      "pets": false,
+      "_id": {
+        "$oid": "64723048743d7e1d67e5b49c"
+      }
+    }
+  ],
+  "__v": 0
+}]
