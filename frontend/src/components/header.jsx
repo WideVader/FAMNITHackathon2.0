@@ -32,7 +32,7 @@ export const Header = () => {
                 <nav>
                     <NavLink to="/" className="link"> Home </NavLink>
                     <NavLink to="/newlife" className="link"> Search </NavLink>
-                    <NavLink to="/" className="link"> Documentation </NavLink>
+                    <NavLink to="/https://github.com/WideVader/FAMNITHackathon2.0" className="link"> Documentation </NavLink>
                     {user.data ? <p className="link">{user.data.username}</p> : <NavLink to="/login" className="link"> Login </NavLink>}
                 </nav>
                 <div className="mobileNavButton" >
