@@ -215,7 +215,7 @@ app.post('/api/listings/', async (req, res) => {
     try {
       let amenities = ["'shop'='convenience'", "'amenity'='restaurant'", "'highway'='bus_stop'", "'tourism'='museum'", "'leisure'='park'", "'amenity'='school'", "'leisure'='stadium'", "'leisure'='fitness_centre'", "'amenity'='fuel'", "'aeroway'='aerodrome'"]
       let response = []
-      let responseObj = { adress: el.adress, price: el.price, image: el.image, title: el.title, filters: [] }
+      let responseObj = { adress: el.adress, price: el.price, image: el.image, title: el.title, filters: el.amenities }
       let flag = true;
       for(let i = 0; i < amenities.length; i++){
         if(rad[i]!=0){
@@ -235,8 +235,8 @@ app.post('/api/listings/', async (req, res) => {
           node[${amenities[i]}](around:2000,${lat},${lon});
           out;`;
           const resultingSmt = await sendOverpassRequest(query, amenities[i], 2000)
-          if (resultingSmt != null)
-            responseObj.filters.push(amenities[i].split("=").pop())
+          // if (resultingSmt != null)
+          //   responseObj.filters.push(amenities[i].split("=").pop())
           // response.push({ adress: el, amenities: amenities[i], latLonString: resultingSmt });
         }
         else {
@@ -248,7 +248,7 @@ app.post('/api/listings/', async (req, res) => {
             flag = false
             throw new Error('BreakException');
           }
-          responseObj.filters.push(amenities[i].split("=").pop())
+          // responseObj.filters.push(amenities[i].split("=").pop())
 
           // response.push({ adress: el, amenities: amenities[i], latLonString: resultingSmt });
         }
