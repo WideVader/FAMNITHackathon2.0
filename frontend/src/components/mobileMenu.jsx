@@ -1,22 +1,21 @@
 import "../css/mobileMenu.css"
 import { ButtonNav } from "./buttonMobileNav"
 import { LinkMobile } from "./linkForMenuMobile"
+import { Link } from "react-router-dom";
+
 
 export const MobileMenu = ({ isOpen }) => {
 
     const link = [
         {
-            to: "/", text: "Product", key: 1
+            to: "/", text: "Home", key: 1
         },
         {
-            to: "/messi", text: "Solutions", key: 2
+            to: "/newLife", text: "New Life", key: 2
         },
-        {
-            to: "/messi", text: "Open Source", key: 3
-        },
-        {
-            to: "/messi", text: "Pricing", key: 4
-        }
+        // {
+        //     to: "/messi", text: "Open Source", key: 3
+        // }
     ]
 
     return (
@@ -30,7 +29,9 @@ export const MobileMenu = ({ isOpen }) => {
                     )
                 })}
             </div>
-            <ButtonNav> Sign in </ButtonNav>
+            <Link to="/login">
+                <ButtonNav> Sign in </ButtonNav>
+            </Link>
         </div>
     )
 }

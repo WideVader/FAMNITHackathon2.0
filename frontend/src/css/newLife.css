@@ -1,4 +1,4 @@
-.buttonSearch{
+.buttonSearch {
     background-color: blue;
     cursor: pointer;
     width: 60px;
@@ -12,55 +12,72 @@
     justify-content: center;
 }
 
-.searchBarInput{
+.searchBarInput {
     padding: 20px;
     border: none;
     outline: none;
-    background-color: rgb(255, 244, 230);
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(146, 146, 255);
     width: 100%;
     border-top-left-radius: 30px;
     border-bottom-left-radius: 30px;
 }
 
-.FilterForDesktop{
+.FilterForDesktop {
     width: 300px;
 }
 
-.searchBar{
+.searchBar {
     display: flex;
     margin-bottom: 10px;
     width: 100%;
 }
 
-.newLife{
+.newLife {
     display: flex;
 }
 
-.DataForDesktop{
+.DataForDesktop {
     width: calc(100% - 300px);
 }
 
-.SearchTitle{
+.lupa,
+.loading {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    margin-top: 100px;
+    color: gray;
+    align-items: center;
+}
+
+.loading {
+    max-width: 100px;
+}
+
+.SearchTitle {
     margin: 20px;
 }
 
 
 @media (max-width: 767px) {
-    .searchBar{
+    .searchBar {
         width: calc(100% - 1em);
         margin: 0 0.5em;
     }
-  }
+}
 
-  @media (max-width: 950px) {
-    .FilterForDesktop{
+@media (max-width: 950px) {
+    .FilterForDesktop {
         width: 190px;
     }
-    .DataForDesktop{
+
+    .DataForDesktop {
         width: 100%;
     }
 
-    .FilterForDesktop{
+    .FilterForDesktop {
         display: none;
     }
-  }
+}

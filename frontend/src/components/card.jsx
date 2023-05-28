@@ -8,10 +8,11 @@ import { MdLocalParking } from "react-icons/md";
 
 
 export const Card = ({ data }) => {
+
+    console.log(data[0])
+
     const Reating = (star) => {
         //golang ima mape, ovo smece nema lijepu sintaksu za mape 
-        
-
         if (star == 4) {
             return "Good"
         } else {
@@ -21,26 +22,26 @@ export const Card = ({ data }) => {
 
     return (
         <div className="cardPart">
-            <img className="imageBannerCard" src={data.image} alt="" />
+            <img className="imageBannerCard" src={data[0].image} alt="" />
             <div className="fullScreenWidth">
-                <h2 className="titleCard">{data.title}</h2>
+                <h2 className="titleCard">{data[0].title}</h2>
                 <div className="address">
-                    <GrLocation /> <p>{data.address}</p>
+                    <GrLocation /> <p>{data[0].adress}</p>
                 </div>
 
                 <div className="amenitiesCard">
-                    {data.amenities[3].pets && <ParameterCard data={{Icon: MdPets, text: "Pet"}}/>}
-                    {data.amenities[1].breakfast &&<ParameterCard data={{Icon: MdOutlineBreakfastDining, text: "Breakfast"}}/>}
-                    {data.amenities[2].parking && <ParameterCard data={{Icon: MdLocalParking, text: "Parking"}}/>}
-                    {data.amenities[0].wifi && < ParameterCard data={{Icon: AiOutlineWifi, text: "Wi-Fi"}}/>}
+                    {data[0].filters[3].pets && <ParameterCard data={{Icon: MdPets, text: "Pet"}}/>}
+                    {data[0].filters[1].breakfast &&<ParameterCard data={{Icon: MdOutlineBreakfastDining, text: "Breakfast"}}/>}
+                    {data[0].filters[2].parking && <ParameterCard data={{Icon: MdLocalParking, text: "Parking"}}/>}
+                    {data[0].filters[0].wifi && < ParameterCard data={{Icon: AiOutlineWifi, text: "Wi-Fi"}}/>}
                 </div>
 
                 <div className="data-information">
                     <div className="star">
-                        {data.star}
+                        4.5
                     </div>
-                    <p className="star-reating">{Reating(data.star)}</p>
-                    <p className="price"><span className="priceBold">200$</span> <span className="night">/night</span> </p>
+                    <p className="star-reating">{Reating(4.5)}</p>
+                    <p className="price"><span className="priceBold">{data[0].price}$</span> <span className="night">/night</span> </p>
                 </div>
             </div>
         </div>

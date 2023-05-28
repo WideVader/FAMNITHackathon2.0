@@ -1,0 +1,178 @@
+.homeBaneerSection {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    min-height: calc(100vh - 70px);
+}
+
+.leftSideHome {
+    width: 50%;
+    padding: 70px;
+}
+
+.sectionImage {
+    width: 50%;
+}
+
+.headerSectionHome {
+    size: 30px;
+    margin-bottom: 15px;
+}
+
+.homeSectiomHeroParagraf {
+    color: rgb(51, 51, 51);
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.3;
+}
+
+.upadaUOci {
+    color: blue;
+}
+
+.leftSideHome button {
+    padding: 15px 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    border: none;
+    margin-top: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 10px;
+    background-color: rgba(123, 185, 255, 0.619);
+}
+
+
+.cardHome {
+    width: 100%;
+    gap: 10px;
+    display: flex;
+    color: rgb(230, 230, 230);
+}
+
+.cardHomeContent {
+    flex: 1;
+    background-color: rebeccapurple;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.cardHomeContent h1 {
+    margin-bottom: 20px;
+}
+
+.SuperTitle {
+    padding: 20px 20px 30px 20px;
+}
+
+.one {
+    background: rgb(0, 255, 51);
+    background: linear-gradient(90deg, rgba(0, 255, 51, 1) 0%, rgba(0, 89, 10, 1) 100%);
+}
+
+.two {
+    background: rgb(132, 248, 255);
+    background: linear-gradient(90deg, rgba(132, 248, 255, 1) 0%, rgba(106, 0, 255, 1) 100%);
+}
+
+.three {
+    background: rgb(253, 151, 151);
+    background: linear-gradient(90deg, rgba(253, 151, 151, 1) 0%, rgba(255, 0, 0, 1) 100%);
+}
+
+.four {
+    background: rgb(0, 14, 163);
+    background: linear-gradient(90deg, rgba(0, 14, 163, 1) 0%, rgba(30, 0, 73, 1) 100%);
+}
+
+
+/* ================================================================== */
+
+.MoreInfoSection {
+    display: flex;
+    align-items: center;
+    padding: 60px;
+    height: 100vh;
+}
+
+.MoreInfoImage {
+    width: 50%;
+}
+
+.MoreInfoText {
+    width: 50%;
+}
+
+.MoreInfoText p {
+    color: rgb(51, 51, 51);
+    line-height: 1.3;
+}
+
+.MoreInfoText h1 {
+    margin-bottom: 20px;
+}
+
+
+@media (max-width: 770px) {
+
+    .homeCards {
+        width: calc(100% - 40px);
+    }
+
+    .homeBaneerSection {
+        flex-direction: column;
+        width: calc(100% - 4px);
+    }
+
+    .cardHomeContent {
+        padding: 30px;
+    }
+
+    .cardHome {
+        flex-wrap: wrap;
+        padding: 0 20px;
+    }
+
+    .headerSectionHome {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .homeSectiomHeroParagraf {
+        text-align: center;
+        margin-top: 40px;
+    }
+
+
+
+    .sectionImage {
+        width: 90%;
+    }
+
+    .leftSideHome button {
+        width: 100%;
+    }
+
+    .leftSideHome {
+        padding: 20px;
+        width: 90%;
+    }
+
+    .MoreInfoSection{
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .MoreInfoImage, .MoreInfoText{
+        width: 90%;
+    }
+
+    .MoreInfoSection{
+        height: 70vh;
+    }
+
+}
+
+@media (max-width: 550px) {
+    .cardHome {
+        flex-direction: column;
+    }
+}

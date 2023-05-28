@@ -15,10 +15,13 @@ header {
   display: none;
 }
 
-.logo {
+.logo{
   color: var(--second-color);
 }
 
+a{
+  text-decoration: none;
+}
 
 @media (max-width: 1012px) {
   .mobileNavButton {
