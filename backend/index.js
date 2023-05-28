@@ -101,16 +101,59 @@ app.delete('/api/users/:id', async (req, res) => {
 })
 
 app.post('/api/users/new', async (req, res) => {
-  try {
-    const user = new User(req.body);
-    await user.save();
-    res.status(201).json(user);
-  } catch (error) {
-    res.status(400).json({ error: error.message });
+
+  const User = require('./app/models/user.model');
+  const Listing = require('./app/models/listing.model');
+  
+  // Assuming you have retrieved the user preferences and retrieved the listings from the database
+  
+  // Calculate recommendation scores for each listing
+  const recommendations = listings.map((listing) => {
+    // Calculate the recommendation score based on similarity between user preferences and listing attributes
+    const recommendationScore = calculateRecommendationScore(user.preferences, listing.amenities);
+  
+    // Assign the recommendation score to the listing
+    return { listing, recommendationScore };
+  });
+  
+  // Sort the recommendations based on the recommendation score in descending order
+  recommendations.sort((a, b) => b.recommendationScore - a.recommendationScore);
+  
+  // Get the top recommendation
+  const topRecommendation = recommendations[0];
+  
+  // Return the top recommendation to the user
+  res.json({ recommendation: topRecommendation });
+
+  function calculateRecommendationScore(userPreferences, listingAmenities) {
+    // Assign weights to each amenity attribute based on importance
+    const weights = {
+      wifi: 0.8,
+      breakfast: 0.6,
+      parking: 0.7,
+      pets: 0.5,
+    };
+  
+    // Calculate the recommendation score based on similarity between user preferences and listing amenities
+    let recommendationScore = 0;
+    Object.keys(userPreferences).forEach((preference) => {
+      if (listingAmenities[preference] === userPreferences[preference]) {
+        recommendationScore += weights[preference];
+      }
+    });
+  
+    return recommendationScore;
   }
+  // try {
+  //   const user = new User(req.body);
+  //   await user.save();
+  //   res.status(201).json(user);
+  // } catch (error) {
+  //   res.status(400).json({ error: error.message });
+  // }
 })
 
-app.get('/api/listings/', async (req, res) => {
+app.post('/api/listings/', async (req, res) => {
   // const result = await Role.find();
   // res.send(result);
 
